@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+    <string name="go_to_main">Main activity</string>
+    <string name="go_to_second">Second activity</string>
+    <string name="go_to_third">Third activity</string>
+
+    <string name="main_info">You are in main activity</string>
+    <string name="second_info">You are in second activity</string>
+    <string name="third_info">You are in third activity</string>
+</resources>

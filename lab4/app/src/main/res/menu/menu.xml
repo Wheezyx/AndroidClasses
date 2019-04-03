@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/about"
+            android:title="About author"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/addRace"
+            android:title="Add race"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/addClass"
+            android:title="Add class"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/addSkill"
+            android:title="Add skill"
+            app:showAsAction="never" />
+
+</menu>

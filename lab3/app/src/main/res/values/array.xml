@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="messageItems">
+            <item>Hej!</item>
+            <item>Siemka!</item>
+            <item>Witaj!</item>
+            <item>Elo!</item>
+        </string-array>
+</resources>

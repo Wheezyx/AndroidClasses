@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">lab4</string>
+    <string name="title_activity_class">ClassActivity</string>
+    <string name="author_name">Mateusz Wedeł</string>
+</resources>

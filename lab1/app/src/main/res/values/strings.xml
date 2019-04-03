@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab1</string>
+    <string-array name="operation">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+    </string-array>
+    <string name="calculate">LICZ</string>
+</resources>

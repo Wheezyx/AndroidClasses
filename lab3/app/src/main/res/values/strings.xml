@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">lab3</string>
+    <string name="switchName">Zmien kolor</string>
+    <string name="helloButton">Przywitaj sie!</string>
+    <string name="changeActivity">Zmien aktywnosc!</string>
+    <string name="radioGroupQuestion">Ulubiony zwierzak?</string>
+    <string name="answer1">Pies</string>
+    <string name="answer2">Kot</string>
+    <string name="answer3">Chomik</string>
+    <string name="answer4">Zolw</string>
+    <string name="pet_image">Twój zwierzak!</string>
+    <string name="choose_pet_button">Wybierz mądrze!</string>
+    <string name="button_to_main">Wróc do głównej aktywności</string>
+    <string name="scroll_text">Pewien informatyk poszedł na ryby.
+        Złapał złotą rybkę, która obiecała spełnić tradycyjnie trzy życzenia.
+        Informatyk mówi:
+        - Żeby był pokój na świecie.
+        - Za trudne.
+        - No to, aby windows się nie zacinał.
+        - To już niech będzie ten pokój na świecie.\n\n
+
+        Jest impreza u informatyków, wódka leje się szerokimi pasmami. Dwóch hackerów pije bruderszafta.
+        - To co? Mówmy sobie po IP\n\n\n
+
+        Dzieci piszą wypracowanie o tym, jak wyobrażają sobie pracę informatyka.
+        Nie pisze tylko Karol.
+        - Dlaczego nie piszesz? - pyta go nauczycielka.
+        - Czekam, aż mi się otworzy edytor tekstu.
+    </string>
+
+</resources>

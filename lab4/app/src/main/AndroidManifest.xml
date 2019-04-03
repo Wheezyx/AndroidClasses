@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="pl.wedel.lab4">
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".AuthorActivity" android:parentActivityName=".MainActivity" android:label="About author">
+
+        </activity>
+        <activity android:name=".SkillDetailsActivity">
+        </activity>
+        <activity
+                android:name=".SkillActivity"
+                android:label="Choose skill">
+        </activity>
+        <activity
+                android:name=".ClassActivity"
+                android:label="Choose class">
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:label="Wow skills! Race?">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
