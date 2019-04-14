@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class RaceAdapter(private val context: Context, private val races: Array<Race>) : BaseAdapter() {
+class RaceAdapter(private val context: Context, private val races: ArrayList<Race>) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View
         val viewHolder: ViewHolder
@@ -22,7 +22,7 @@ class RaceAdapter(private val context: Context, private val races: Array<Race>) 
             viewHolder = view.tag as ViewHolder
         }
         val race = races[position]
-        viewHolder.lblImage?.setImageResource(race.image)
+        viewHolder.lblImage?.setImageBitmap(race.image)
         viewHolder.lblName?.text = race.name
         viewHolder.lblDesignation?.text = race.description
 

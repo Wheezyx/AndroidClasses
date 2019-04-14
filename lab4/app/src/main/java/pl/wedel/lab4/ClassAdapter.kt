@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class ClassAdapter(private val context: Context, private val classes: Array    <Class>) : BaseAdapter() {
+class ClassAdapter(private val context: Context, private val classes: ArrayList<Class>) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View
         val viewHolder: ViewHolder
@@ -22,7 +22,7 @@ class ClassAdapter(private val context: Context, private val classes: Array    <
             viewHolder = view.tag as ViewHolder
         }
         val class_ = classes[position]
-        viewHolder?.lblImage?.setImageResource(class_.image)
+        viewHolder?.lblImage?.setImageBitmap(class_.image)
         viewHolder.lblName?.text = class_.name
         viewHolder.lblDesignation?.text = class_.description
 
