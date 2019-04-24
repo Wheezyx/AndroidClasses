@@ -12,11 +12,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import kotlinx.android.synthetic.main.fragment_class_race_add.*
-import pl.wedel.lab4.Class
-import pl.wedel.lab4.MainActivity
-import pl.wedel.lab4.R
-import pl.wedel.lab4.Race
+import pl.wedel.lab4.*
 import pl.wedel.lab4.database.DBHelper
 
 private const val ARG_PARAM1 = "param1"
@@ -44,10 +43,17 @@ class ClassRaceAddFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_class_race_add, container, false)
-        val pickPhotoBtn = view.findViewById<Button>(R.id.pickPhotoBtn)
+        val pickPhotoBtn = view.findViewById<ImageView>(R.id.image)
         val saveBtn = view.findViewById<Button>(R.id.addButton)
+        val downloadBtn = view.findViewById<Button>(R.id.pickPhotoBtn)
+        val downloadLink = view.findViewById<EditText>(R.id.downloadLinkText)
         saveBtn.setOnClickListener { saveEntity() }
         pickPhotoBtn.setOnClickListener { pickPhoto() }
+        downloadBtn.setOnClickListener {
+            ImageDownloaderTask(pickPhotoBtn, downloadLink.text.toString()).execute(
+                downloadLink.text.toString()
+            )
+        }
         return view
     }
 

@@ -327,7 +327,7 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     companion object {
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
         const val DATABASE_NAME = "WoWSkills.db"
 
         private const val SQL_CREATE_CLASS_ENTRIES =

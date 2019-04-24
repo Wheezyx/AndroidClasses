@@ -1,8 +1,12 @@
 package pl.wedel.lab4
 
+import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
+import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Bundle
+import android.os.IBinder
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
@@ -14,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import pl.wedel.lab4.database.DBHelper
 import pl.wedel.lab4.fragments.AddSkillFragment
 import pl.wedel.lab4.fragments.ClassRaceAddFragment
+import pl.wedel.lab4.service.MusicService
 
 class MainActivity : AppCompatActivity(), AddSkillFragment.OnFragmentInteractionListener,
     ClassRaceAddFragment.OnFragmentInteractionListener {
@@ -21,6 +26,22 @@ class MainActivity : AppCompatActivity(), AddSkillFragment.OnFragmentInteraction
     lateinit var saveFragment: AddSkillFragment
     lateinit var raceClassFragment: ClassRaceAddFragment
     private lateinit var DBHelper: DBHelper
+    private var isBound = false
+    private var musicService: MusicService? = null
+
+    private val serviceCon = object : ServiceConnection {
+        override fun onServiceDisconnected(name: ComponentName?) {
+            musicService = null
+        }
+
+        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+            service as MusicService.ServiceBinder
+            musicService = service.service
+        }
+
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +66,11 @@ class MainActivity : AppCompatActivity(), AddSkillFragment.OnFragmentInteraction
 
         saveFragment = AddSkillFragment.newInstance()
         raceClassFragment = ClassRaceAddFragment.newInstance("A", "B")
+
+        doBindService()
+        val music = Intent()
+        music.setClass(this, MusicService::class.java)
+        startService(music)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -96,4 +122,24 @@ class MainActivity : AppCompatActivity(), AddSkillFragment.OnFragmentInteraction
     override fun onFragmentInteraction(uri: Uri) {
         Log.d("Changed", "Changed")
     }
+
+    fun doBindService() {
+        bindService(Intent(this, MusicService::class.java), serviceCon, Context.BIND_AUTO_CREATE)
+        isBound = true
+    }
+
+    fun doUnbindService() {
+        unbindService(serviceCon)
+        isBound = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        musicService?.resumeMusic()
+    }
+
+
 }
+
+
+
